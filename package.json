@@ -13,7 +13,9 @@
   "scripts": {
     "test": "xo",
     "start": "electron .",
-    "build": "electron-packager ./ --platform=darwin --arch=x64 --out=out --icon=./icon.icns --overwrite"
+    "build": "electron-packager ./ --platform=darwin --arch=x64 --out=out --icon=./icon.icns --overwrite",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "files": [
     "index.js",
@@ -26,7 +28,8 @@
   ],
   "dependencies": {
     "electron-debug": "^1.0.0",
-    "unirest": "^0.5.1"
+    "unirest": "^0.5.1",
+    "snyk": "^1.85.0"
   },
   "devDependencies": {
     "devtron": "^1.1.0",
@@ -40,5 +43,6 @@
       "node",
       "browser"
     ]
-  }
+  },
+  "snyk": true
 }
